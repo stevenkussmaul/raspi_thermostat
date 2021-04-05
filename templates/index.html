@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+   <head>
+      <title>GPIO Control</title>
+      <link rel="stylesheet" href='../static/style.css'/>
+   </head>
+
+   <body>
+		<h1>Actuators</h1>
+		<h2> Status </h2>
+		<h3> Relay 17 ==>  {{ relay17  }}</h3>
+      <h3> Relay 22 ==>  {{ relay22  }}</h3>
+      <h3> Relay 23 ==>  {{ relay23  }}</h3>
+      <h3> Relay 27 ==>  {{ relay27  }}</h3>
+	  <h3> Temperature ==> {{ temperature }} </h3>
+
+	  <h3>
+		<div class="container">
+			<h2>Button Pressed: {{SetPoint}}</h2>
+			<form method="get">
+				<a href="/temperature/up" class="button">UP</a>
+				<a href="/temperature/down" class="button">DOWN</a>
+		
+			</form>
+		 </div>
+	  </h3>
+
+		
+		<br>
+		<h2> Commands </h2>
+		<h3> 
+         Relay on pin 17 ==> 
+		{% if not relay17 %}		
+			 <a href="/relay/17" class="button">TURN ON</a>  
+		{% else %}
+			<a href="/relay/17" class="button">TURN OFF</a>
+		{% endif %}
+		</h3>
+		<h3>
+         Relay on pin 22 ==> 
+			<a href="/relay/22" class="button">TURN ON</a>  
+			<a href="/relay/22" class="button">TURN OFF</a>
+		</h3>
+		<h3> 
+			Relay on pin 23 ==>  
+			<a href="/relay/23" class="button">TURN ON</a>  
+			<a href="/relay/23" class="button">TURN OFF</a>
+		</h3>
+		<h3> 
+			Relay on pin 27 ==> 
+			<a href="/relay/27" class="button">TURN ON</a>  
+			<a href="/relay/27"  class="button">TURN OFF</a>
+		</h3>
+
+   </body>
+</html>
